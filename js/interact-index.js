@@ -4,7 +4,7 @@ $(document).ready(() => {
     if (user) {
       console.log(user.displayName)
       console.log(user.photoURL)
-      $(".nav-item").after("<li class=\"nav-item\"><a class=\"nav-link js-scroll-trigger\" href=\"#\">Rental Center</a></li><li class=\"nav-item\"><a id=\"signOut\" class=\"nav-link js-scroll-trigger\" href=\"#\" >Sign Out</a></li>")
+      $(".nav-item").after("<li class=\"nav-item\"><a id=\"ren\"class=\"nav-link js-scroll-trigger\" href=\"ren_center.html\">Rental Center</a></li><li class=\"nav-item\"><a id=\"mem\" class=\"nav-link js-scroll-trigger\" href=\"mem_center.html\">Member Center</a></li><li class=\"nav-item\"><a id=\"signOut\" class=\"nav-link js-scroll-trigger\" href=\"#\" >Sign Out</a></li>")
       $("#signOut").click(() => {
         firebase.auth().signOut().then(() => {
           location.reload();
@@ -15,7 +15,7 @@ $(document).ready(() => {
         })
       })
       if (!user.displayName){
-        window.location = "profile_update.html";
+        window.location = "new_profile.html";
       }
     } else {
       $(".nav-item").after("<li class=\"nav-item\"><a class=\"nav-link js-scroll-trigger\" data-toggle=\"modal\" data-target=\"#login\"  href=\"#\">Sign In</a></li><li class=\"nav-item\"><a class=\"nav-link js-scroll-trigger\" data-toggle=\"modal\" data-target=\"#reg\"  href=\"#\">Sign Up</a></li>")
